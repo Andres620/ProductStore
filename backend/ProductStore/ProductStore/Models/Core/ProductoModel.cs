@@ -1,6 +1,6 @@
 ﻿namespace ProductStore.Models.Core
 {
-    public class productoModel
+    public class ProductoModel
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

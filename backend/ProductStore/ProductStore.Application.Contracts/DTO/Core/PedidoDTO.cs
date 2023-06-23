@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductStore.Application.Contracts.DTO.Core
 {
-    internal class PedidoDTO
+    public class PedidoDTO
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
