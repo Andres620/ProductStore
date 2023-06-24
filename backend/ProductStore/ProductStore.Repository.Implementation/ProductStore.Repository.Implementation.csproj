@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DataModel\" />
-    <Folder Include="Implementation\" />
-    <Folder Include="Mappers\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +21,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductStore.Repository.Contracts\ProductStore.Repository.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

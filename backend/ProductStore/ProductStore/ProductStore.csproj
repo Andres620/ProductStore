@@ -21,10 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\ProductStore.Application.Contracts\ProductStore.Application.Contracts.csproj" />
+    <ProjectReference Include="..\ProductStore.Application.Implementation\ProductStore.Application.Implementation.csproj" />
     <ProjectReference Include="..\ProductStore.Repository.Implementation\ProductStore.Repository.Implementation.csproj" />
   </ItemGroup>
 
