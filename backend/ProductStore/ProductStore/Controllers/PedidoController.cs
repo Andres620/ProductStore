@@ -10,8 +10,12 @@ namespace ProductStore.Controllers
     [Route("[controller]")]
     public class PedidoController : ControllerBase
     {
-        //Hacer inversion de dependencias
-        private IPedidoApplication _app = new PedidoImpApplication();
+        private IPedidoApplication _app;
+
+        public PedidoController(IPedidoApplication app)
+        {
+            _app = app;
+        }
 
         [HttpGet]
         public ActionResult<List<PedidoModel>> GetAllPedidos()

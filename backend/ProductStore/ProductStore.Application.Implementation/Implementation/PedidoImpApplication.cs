@@ -14,8 +14,12 @@ namespace ProductStore.Application.Implementation.Implementation
 {
     public class PedidoImpApplication : IPedidoApplication
     {
-        //Hacer inversion de dependencias
-        IPedidoRepository _repository = new PedidoImpRepository();
+        IPedidoRepository _repository;
+
+        public PedidoImpApplication(IPedidoRepository repository)
+        {
+            _repository = repository;
+        }
 
         public PedidoDTO createRecord(PedidoDTO record)
         {

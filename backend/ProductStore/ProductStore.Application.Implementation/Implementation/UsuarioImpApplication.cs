@@ -14,8 +14,13 @@ namespace ProductStore.Application.Implementation.Implementation
 {
     public class UsuarioImpApplication : IUsuarioApplication
     {
-        //Hacer inversion de dependencias
-        IUsuarioRepository _repository = new UsuarioImpRepository();
+        IUsuarioRepository _repository;
+
+        public UsuarioImpApplication(IUsuarioRepository repository)
+        {
+            _repository = repository;
+        }
+
         public UsuarioDTO createRecord(UsuarioDTO record)
         {
             UsuarioApplicationMapper mapper = new UsuarioApplicationMapper();

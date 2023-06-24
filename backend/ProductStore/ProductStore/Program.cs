@@ -1,6 +1,18 @@
+using ProductStore.Application.Contracts.Interfaces;
+using ProductStore.Application.Implementation.Implementation;
+using ProductStore.Repository.Contracts.Interfaces;
+using ProductStore.Repository.Implementation.Implementation.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IUsuarioRepository, UsuarioImpRepository>();
+builder.Services.AddScoped<IProductoRepository, ProductoImpRepository>();
+builder.Services.AddScoped<IPedidoRepository, PedidoImpRepository>();
+
+builder.Services.AddScoped<IUsuarioApplication, UsuarioImpApplication>();
+builder.Services.AddScoped<IProductoApplication, ProductoImpApplication>();
+builder.Services.AddScoped<IPedidoApplication, PedidoImpApplication>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
