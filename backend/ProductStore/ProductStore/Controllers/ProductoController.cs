@@ -10,8 +10,12 @@ namespace ProductStore.Controllers
     [Route("[controller]")]
     public class ProductoController : ControllerBase
     {
-        //Hacer inversion de dependencias
-        private IProductoApplication _app = new ProductoImpApplication();
+        private IProductoApplication _app;
+
+        public ProductoController(IProductoApplication app)
+        {
+            _app = app;
+        }
 
         [HttpGet]
         public ActionResult<List<ProductoModel>> GetAllProductos()

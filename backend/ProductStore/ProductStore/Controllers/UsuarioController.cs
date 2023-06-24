@@ -15,8 +15,12 @@ namespace ProductStore.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase
     {
-        //Hacer inversion de dependencias
-        private IUsuarioApplication _app = new UsuarioImpApplication();
+        private IUsuarioApplication _app;
+
+        public UsuarioController(IUsuarioApplication app)
+        {
+            _app = app;
+        }
 
         [HttpGet]
         public ActionResult<List<UsuarioModel>> GetAllUsuarios()

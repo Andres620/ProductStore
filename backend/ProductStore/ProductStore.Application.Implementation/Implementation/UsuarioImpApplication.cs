@@ -3,19 +3,18 @@ using ProductStore.Application.Contracts.Interfaces;
 using ProductStore.Application.Implementation.Mappers.Core;
 using ProductStore.Repository.Contracts.DbModels.Core;
 using ProductStore.Repository.Contracts.Interfaces;
-using ProductStore.Repository.Implementation.Implementation.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductStore.Application.Implementation.Implementation
 {
     public class UsuarioImpApplication : IUsuarioApplication
     {
-        //Hacer inversion de dependencias
-        IUsuarioRepository _repository = new UsuarioImpRepository();
+        IUsuarioRepository _repository;
+
+        public UsuarioImpApplication(IUsuarioRepository repository)
+        {
+            _repository = repository;
+        }
+
         public UsuarioDTO createRecord(UsuarioDTO record)
         {
             UsuarioApplicationMapper mapper = new UsuarioApplicationMapper();

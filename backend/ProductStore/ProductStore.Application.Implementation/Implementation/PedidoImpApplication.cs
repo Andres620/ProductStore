@@ -3,19 +3,17 @@ using ProductStore.Application.Contracts.Interfaces;
 using ProductStore.Application.Implementation.Mappers.Core;
 using ProductStore.Repository.Contracts.DbModels.Core;
 using ProductStore.Repository.Contracts.Interfaces;
-using ProductStore.Repository.Implementation.Implementation.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductStore.Application.Implementation.Implementation
 {
     public class PedidoImpApplication : IPedidoApplication
     {
-        //Hacer inversion de dependencias
-        IPedidoRepository _repository = new PedidoImpRepository();
+        IPedidoRepository _repository;
+
+        public PedidoImpApplication(IPedidoRepository repository)
+        {
+            _repository = repository;
+        }
 
         public PedidoDTO createRecord(PedidoDTO record)
         {
