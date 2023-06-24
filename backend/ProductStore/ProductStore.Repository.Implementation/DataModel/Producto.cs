@@ -11,7 +11,7 @@ public partial class Producto
 
     public string Descripcion { get; set; } = null!;
 
-    public string Precio { get; set; } = null!;
+    public int Precio { get; set; }
 
     public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }

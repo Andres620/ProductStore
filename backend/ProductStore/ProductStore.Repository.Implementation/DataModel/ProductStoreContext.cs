@@ -68,8 +68,6 @@ public partial class ProductStoreContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
             entity.Property(e => e.Precio)
-                .HasMaxLength(100)
-                .IsUnicode(false)
                 .HasColumnName("precio");
         });
 

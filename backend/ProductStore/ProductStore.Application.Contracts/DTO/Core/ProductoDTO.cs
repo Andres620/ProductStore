@@ -11,6 +11,6 @@ namespace ProductStore.Application.Contracts.DTO.Core
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public string Precio { get; set; }
+        public int Precio { get; set; }
     }
 }
