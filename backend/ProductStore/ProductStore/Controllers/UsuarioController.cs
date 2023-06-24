@@ -23,7 +23,7 @@ namespace ProductStore.Controllers
         {
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
             IEnumerable<UsuarioModel> list = mapper.DTOToModelMapper(_app.getRecordsList());
-            return new OkObjectResult(list);
+            return Ok(list);
         }
 
         [HttpGet("{id}")]
@@ -34,15 +34,15 @@ namespace ProductStore.Controllers
         {
             if (id == null)
             {
-                return new BadRequestResult();
+                return BadRequest();
             }
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
             UsuarioModel usuarioModel = mapper.DTOToModelMapper(_app.getRecordById(id));
             if (usuarioModel == null)
             {
-                return new NotFoundResult();
+                return NotFound();
             }
-            return new OkObjectResult(usuarioModel);
+            return Ok(usuarioModel);
         }
 
         [HttpPost]
@@ -52,12 +52,12 @@ namespace ProductStore.Controllers
         {
             if (usuario == null)
             {
-                return new BadRequestResult();
+                return BadRequest();
             }
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
             _app.createRecord(mapper.ModelToDTOMapper(usuario));
 
-            return new OkObjectResult(usuario);
+            return Ok(usuario);
         }
 
         [HttpPut("{id}")]
@@ -68,17 +68,17 @@ namespace ProductStore.Controllers
         {
             if (usuario == null)
             {
-                return new BadRequestResult();
+                return BadRequest();
             }
 
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
             UsuarioModel usuarioModel = mapper.DTOToModelMapper(_app.getRecordById(usuario.Id));
             if (usuarioModel == null)
             {
-                return new NotFoundResult();
+                return NotFound();
             }
             _app.updateRecord(mapper.ModelToDTOMapper(usuario));
-            return new OkObjectResult(usuario);
+            return Ok(usuario);
         }
 
         [HttpDelete("{id}")]
@@ -89,19 +89,19 @@ namespace ProductStore.Controllers
         {
             if (id == null)
             {
-                return new BadRequestResult();
+                return BadRequest();
             }
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
             UsuarioModel usuarioModel = mapper.DTOToModelMapper(_app.getRecordById(id));
             if (usuarioModel == null)
             {
-                return new NotFoundResult();
+                return NotFound();
             }
 
             bool response = _app.deleteRecordById(id);
             if (response)
             {
-                return new NoContentResult();
+                return NoContent();
             }
             return StatusCode(500);
         }
