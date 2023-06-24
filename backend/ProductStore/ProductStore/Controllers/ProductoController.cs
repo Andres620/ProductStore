@@ -48,6 +48,7 @@ namespace ProductStore.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProductoModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public ActionResult<ProductoModel> CreateProducto(ProductoModel producto)
         {
             if (producto == null)
@@ -55,7 +56,12 @@ namespace ProductStore.Controllers
                 return BadRequest();
             }
             ProductoAPIMapper mapper = new ProductoAPIMapper();
-            _app.createRecord(mapper.ModelToDTOMapper(producto));
+            var response = _app.createRecord(mapper.ModelToDTOMapper(producto));
+
+            if (response == null)
+            {
+                return Conflict();
+            }
 
             return Ok(producto);
         }

@@ -54,7 +54,12 @@ namespace ProductStore.Controllers
                 return BadRequest();
             }
             PedidoAPIMapper mapper = new PedidoAPIMapper();
-            _app.createRecord(mapper.ModelToDTOMapper(pedido));
+            var response = _app.createRecord(mapper.ModelToDTOMapper(pedido));
+
+            if (response == null)
+            {
+                return Conflict();
+            }
 
             return Ok(pedido);
         }

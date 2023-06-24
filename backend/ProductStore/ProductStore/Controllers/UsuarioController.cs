@@ -52,6 +52,7 @@ namespace ProductStore.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UsuarioModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public ActionResult<UsuarioModel> CreateUsuario(UsuarioModel usuario)
         {
             if (usuario == null)
@@ -59,7 +60,13 @@ namespace ProductStore.Controllers
                 return BadRequest();
             }
             UsuarioAPIMapper mapper = new UsuarioAPIMapper();
-            _app.createRecord(mapper.ModelToDTOMapper(usuario));
+            var response = _app.createRecord(mapper.ModelToDTOMapper(usuario));
+
+
+            if (response == null)
+            {
+                return Conflict();
+            }
 
             return Ok(usuario);
         }
