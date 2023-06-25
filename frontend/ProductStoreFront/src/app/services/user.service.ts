@@ -9,7 +9,6 @@ import { UserModel } from '../models/userModel';
 })
 export class UserService {
   private urlApi = 'https://localhost:7009/';
-
   constructor(private http: HttpClient) {}
 
   /**

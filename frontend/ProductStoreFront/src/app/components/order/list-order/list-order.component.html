@@ -1,0 +1,33 @@
+<div>
+    <h1>Lista de pedidos</h1>
+    <br />
+    <div class="text-start">
+      <a [routerLink]="['/create-order']" class="btn btn-primary">Crear Pedido</a>
+    </div>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orderList">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.usuarioId }}</td>
+          <td>{{ item.productoId }}</td>
+          <td>{{ item.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ item.cantidad  }}</td>
+          <td>
+            <a routerLink="/edit-order/{{item.id}}" class="btn btn-warning btn-sm me-2">Editar</a>
+            <a routerLink="/delete-order/{{item.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
