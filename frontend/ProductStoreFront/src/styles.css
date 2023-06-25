@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/assets/css/mdb.min.css';
+
 html, body {
   height: 100%;
 }
 
 :root{
-  --body-color: #E4E9F7;
+  --body-color: #f5f5f5;
   --sidebar-color: #FFF;
   --primary-color: #1707c4;
   --primary-color-light: #F6F5FF;
@@ -38,6 +40,17 @@ app-login {
   
 app-login {
     display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+app-auth {
+    height: 100%;
+}
+  
+app-auth {
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;

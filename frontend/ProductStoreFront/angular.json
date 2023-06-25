@@ -22,11 +22,13 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/js/mdb.min.js"
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/mdb.min.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
