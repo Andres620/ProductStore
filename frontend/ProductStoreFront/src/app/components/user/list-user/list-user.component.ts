@@ -14,22 +14,14 @@ export class ListUserComponent implements OnInit{
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe({
-      next: (data) => {
+      next: (data: UserModel[]) => {
         this.userList = data;
         console.log(this.userList);
       },
-      error: (data) => {
+      error: (data: any) => {
         alert("Error leyendo la información");
         console.log(this.userList);
       }
-    });
-    //this.fillData();
-  }
-
-  fillData() {
-    this.userService.getUsers().subscribe((data) => {
-      this.userList = data;
-      console.log(this.userList);
     });
   }
 }

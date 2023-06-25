@@ -19,8 +19,8 @@
         <td>{{ item.nombre }}</td>
         <td>{{ item.correoElectronico }}</td>
         <td>
-          <a [routerLink]="['/edit-user/{{item.id}}']" class="btn btn-warning btn-sm me-2">Editar</a>
-          <a [routerLink]="['/delete-user/{{item.id}}']" class="btn btn-danger btn-sm">Eliminar</a>
+          <a routerLink="/edit-user/{{item.id}}" class="btn btn-warning btn-sm me-2">Editar</a>
+          <a routerLink="/delete-user/{{item.id}}" class="btn btn-danger btn-sm">Eliminar</a>
         </td>
       </tr>
     </tbody>
