@@ -10,13 +10,15 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthComponent } from './components/auth/auth.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     routingComponents,
-    AuthComponent
+    AuthComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

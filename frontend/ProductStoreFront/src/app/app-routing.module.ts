@@ -9,7 +9,6 @@ import { AuthComponent } from './components/auth/auth.component';
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent},
-  { path: 'login', component: LoginComponent },
   { path: 'list-users', component: ListUserComponent},
   { path: 'create-user', component: CreateUserComponent},
   { path: 'edit-user', component: EditUserComponent},
