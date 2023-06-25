@@ -8,8 +8,6 @@ import { LoadScriptsService } from 'src/app/services/load-scripts.service';
 })
 export class SidebarComponent {
 
-  
-
   constructor(private _loadScripts: LoadScriptsService) {
     _loadScripts.load(["sidebar/sidebar"]);
    }
