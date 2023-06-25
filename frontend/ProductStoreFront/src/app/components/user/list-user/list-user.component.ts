@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { UserModel } from 'src/app/models/userModel';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-list-user',
@@ -7,18 +8,28 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit{
-  data: any[] = [];
+  userList: UserModel[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.fillData();
+    this.userService.getUsers().subscribe({
+      next: (data) => {
+        this.userList = data;
+        console.log(this.userList);
+      },
+      error: (data) => {
+        alert("Error leyendo la información");
+        console.log(this.userList);
+      }
+    });
+    //this.fillData();
   }
 
   fillData() {
-    this.apiService.getUsuarios().subscribe((data) => {
-      this.data = data;
-      console.log(this.data);
+    this.userService.getUsers().subscribe((data) => {
+      this.userList = data;
+      console.log(this.userList);
     });
   }
 }

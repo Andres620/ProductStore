@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ApiService } from '../../../services/api.service';
 import { ILogin } from 'src/app/models/login.interface';
 
 @Component({
@@ -16,16 +15,14 @@ export class LoginComponent implements OnInit{
     password : new FormControl('', Validators.required)
   });
 
-  constructor(private api: ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
 
   onLogin(form: ILogin){
-    this.api.loginByEmail(form).subscribe(data => {
-      console.log(data);
-    })
+
   }
 
 }
