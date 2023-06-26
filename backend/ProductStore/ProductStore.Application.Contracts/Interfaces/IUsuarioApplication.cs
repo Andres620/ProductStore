@@ -14,5 +14,6 @@ namespace ProductStore.Application.Contracts.Interfaces
         UsuarioDTO createRecord(UsuarioDTO record);
         UsuarioDTO updateRecord(UsuarioDTO record);
         bool deleteRecordById(int id);
+        bool autenticateUser(string email, string password);
     }
 }

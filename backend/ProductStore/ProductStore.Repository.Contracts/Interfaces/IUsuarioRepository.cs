@@ -14,5 +14,6 @@ namespace ProductStore.Repository.Contracts.Interfaces
         UsuarioDbModel createRecord(UsuarioDbModel record);
         UsuarioDbModel updateRecord(UsuarioDbModel record);
         bool deleteRecordById(int id);
+        bool autenticateUser(string email, string password);
     }
 }

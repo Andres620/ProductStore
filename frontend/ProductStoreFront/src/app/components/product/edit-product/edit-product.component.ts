@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductModel } from 'src/app/models/productModel';
 import { ProductService } from 'src/app/services/product.service';
 
+
 import 'src/assets/js/mdb.min.js'; 
 
 @Component({

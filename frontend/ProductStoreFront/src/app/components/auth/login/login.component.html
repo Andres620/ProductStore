@@ -1,18 +1,29 @@
-<main class="form-signin">
-    <form>
+<main class="form-signin" *ngIf="!isLoggedin; else LoggedinSuccess">
+    <form [formGroup]="fGroup">
       <img class="mb-4" src="../assets/bootstrap-logo.svg" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
   
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" >
-        <label for="floatingInput">Email address</label>
+        <input type="email" class="form-control" id="floatingInputLogin" placeholder="name@example.com" formControlName="correoElectronico">
+        <label for="floatingInputLogin">Email address</label>
+        <div class="show-errors" *ngIf="getFgData['correoElectronico'].errors 
+            && (getFgData['correoElectronico'].dirty || getFgData['correoElectronico'].touched)">
+            <strong>El correo electrónico debe tener un formato válido</strong>
+        </div>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="password" class="form-control" id="floatingPasswordLogin" placeholder="Password" formControlName="contrasena">
+        <label for="floatingPasswordLogin">Password</label>
+        <div class="show-errors" *ngIf="getFgData['contrasena'].errors 
+            && (getFgData['contrasena'].dirty || getFgData['contrasena'].touched)">
+            <strong>La contraseña debe ser minimo de 8 caracteres y contener almenos una letra mayuscula, un dígito y un caracter especial</strong>
+        </div>
       </div>
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+      <button (click)="autenticateRecord()" class="w-100 btn btn-lg btn-primary my-2">Iniciar Sesión</button>
     </form>
 </main>
+<ng-template #LoggedinSuccess>
+  <app-list-product></app-list-product>
+</ng-template>

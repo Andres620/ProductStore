@@ -1,2 +1,6 @@
-<app-sidebar></app-sidebar>
-
+<div *ngIf="isLoggedin; else LoggedinSuccess">
+    <app-sidebar></app-sidebar>
+</div>
+<ng-template #LoggedinSuccess>
+  <app-auth></app-auth>
+</ng-template>

@@ -49,6 +49,19 @@ namespace ProductStore.Controllers
             return Ok(usuarioModel);
         }
 
+        [HttpGet("/auth/{email}/{password}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<bool> AutenticateUser(string email, string password)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                return BadRequest();
+            }
+
+            bool response = _app.autenticateUser(email, password);
+            return Ok(response);
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UsuarioModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

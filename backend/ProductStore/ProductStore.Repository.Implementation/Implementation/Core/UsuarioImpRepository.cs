@@ -121,5 +121,24 @@ namespace ProductStore.Repository.Implementation.Implementation.Core
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene el registro por Correo y la contraseña
+        /// </summary>
+        /// <param name="id">Id del registro a buscar</param>
+        /// <returns>>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
+        public bool autenticateUser(string email, string password)
+        {
+            using (ProductStoreContext db = new ProductStoreContext())
+            {
+                Usuario record = db.Usuarios.FirstOrDefault(u => u.CorreoElectronico == email && u.Contrasena == password);
+                if (record == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+        }
     }
 }

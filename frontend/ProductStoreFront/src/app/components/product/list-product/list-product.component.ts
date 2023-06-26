@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ListProductComponent implements OnInit{
   productList: ProductModel[] = [];
+  isLoggedin: boolean = false;
 
   constructor(private productService: ProductService) {}
 

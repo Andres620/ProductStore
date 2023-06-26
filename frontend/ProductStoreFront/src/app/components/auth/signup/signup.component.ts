@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/userModel';
 import { UserService } from 'src/app/services/user.service';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,15 +12,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupComponent implements OnInit {
   fGroup: FormGroup = new FormGroup({});
+  isLooged: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private globalService: GlobalService
   ) {}
 
   ngOnInit(): void {
     this.buildFormData();
+    this.globalService.globalVariable.subscribe(value => {
+      this.isLooged = value;
+    });
   }
 
   buildFormData() {
