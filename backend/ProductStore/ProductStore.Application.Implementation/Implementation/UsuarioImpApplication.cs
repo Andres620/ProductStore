@@ -61,5 +61,18 @@ namespace ProductStore.Application.Implementation.Implementation
             }
             return mapper.DbModelToDTOMapper(response);
         }
+
+        /// <summary>
+        /// Obtiene el registro por Correo y la contraseña
+        /// </summary>
+        /// <param name="id">Id del registro a buscar</param>
+        /// <returns>>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
+        public bool autenticateUser(string email, string password)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) {
+                return false;
+            }
+            return _repository.autenticateUser(email, password); ;
+        }
     }
 }
