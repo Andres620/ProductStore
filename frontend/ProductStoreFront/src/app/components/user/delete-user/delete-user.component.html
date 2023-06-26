@@ -1,0 +1,39 @@
+<main class="form-signin">
+
+  <h1 class="h3 mb-3 fw-normal">Eliminar usuario</h1>
+
+  <div class="form-floating">
+    <input type="hidden" formControlName="id" />
+    <input
+      type="text"
+      class="form-control"
+      id="floatingNameSingUp"
+      placeholder="Nombre"
+      [disabled]="true"
+    />
+    <label for="floatingNameSingUp" data-error="wrong" data-success="right"
+      >{{recordName}}</label
+    >
+  </div>
+  <div class="form-floating">
+    <input
+      type="email"
+      class="form-control"
+      id="floatingInputSingUp"
+      placeholder="name@example.com"
+      [disabled]="true"
+    />
+    <label for="floatingInputSingUp">{{recordEmail}}</label>
+  </div>
+
+  <input type="hidden" formControlName="contrasena" />
+
+  <div>
+    <button (click)="deleteRecord()" class="w-100 btn btn-lg btn-danger my-2">
+      Eliminar
+    </button>
+    <a [routerLink]="['/list-users']" class="w-100 btn btn-lg btn-warning"
+      >Cancelar</a
+    >
+  </div>
+</main>

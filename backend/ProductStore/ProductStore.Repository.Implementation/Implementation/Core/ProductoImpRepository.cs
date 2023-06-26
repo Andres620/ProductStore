@@ -22,7 +22,7 @@ namespace ProductStore.Repository.Implementation.Implementation.Core
         {
             using (ProductStoreContext db = new ProductStoreContext())
             {
-                Producto producto = db.Productos.Where(x => x.Nombre.Equals(record.Nombre)).FirstOrDefault();
+                Producto producto = db.Productos.Where(x => x.Nombre.Equals(record.Nombre) && x.Descripcion.Equals(record.Descripcion)).FirstOrDefault();
                 if (producto != null)
                 {
                     return null;

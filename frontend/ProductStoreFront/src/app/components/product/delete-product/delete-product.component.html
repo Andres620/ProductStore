@@ -1,0 +1,70 @@
+<main class="form-edit">
+  <h1>Eliminar Producto</h1>
+  <form>
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="formEditProductName"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditProductName"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordName }}</label
+      >
+    </div>
+
+    <!-- Description input -->
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="formEditProductDescription"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditProductDescription"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordDescription }}</label
+      >
+    </div>
+
+    <!-- Price input -->
+    <div class="form-outline mb-4">
+      <input
+        type="number"
+        id="formEditProductPrice"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditProductPrice"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordPrice }}</label
+      >
+    </div>
+
+    <!-- Submit button -->
+    <div class="d-flex justify-content-between">
+      <button
+        (click)="deleteRecord()"
+        class="btn btn-lg btn-danger flex-fill mx-1"
+      >
+        Eliminar
+      </button>
+      <a
+        [routerLink]="['/list-products']"
+        class="btn btn-lg btn-primary flex-fill mx-1"
+        >Cancelar</a
+      >
+    </div>
+  </form>
+</main>

@@ -1,0 +1,28 @@
+<div>
+  <h1>Lista de usuarios</h1>
+  <br />
+  <div class="text-start">
+    <a [routerLink]="['/create-user']" class="btn btn-primary">Crear usuario</a>
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userList">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.correoElectronico }}</td>
+        <td>
+          <a routerLink="/edit-user/{{item.id}}" class="btn btn-warning btn-sm me-2">Editar</a>
+          <a routerLink="/delete-user/{{item.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

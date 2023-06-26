@@ -1,0 +1,87 @@
+<main class="form-edit">
+  <h1>Eliminar Pedidos</h1>
+  <form>
+    <!-- User input -->
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="formEditOrderUser"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditOrderUser"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordUserId }}</label
+      >
+    </div>
+
+    <!-- Product input -->
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="formEditOrderProduct"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditOrderProduct"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordProductId }}</label
+      >
+    </div>
+
+    <!-- Date input -->
+    <div class="form-outline mb-4" style="width: 180px">
+      <input
+        type="text"
+        id="formEditOrderDate"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditOrderDate"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordDate | date : "dd/MM/yyyy" }}</label
+      >
+    </div>
+
+    <!-- Quantity input -->
+    <div class="form-outline mb-4">
+      <input
+        type="number"
+        id="formEditProductQuantity"
+        class="form-control validate"
+        [disabled]="true"
+      />
+      <label
+        class="form-label"
+        for="formEditProductQuantity"
+        data-error="wrong"
+        data-success="right"
+        >{{ recordQuantity }}</label
+      >
+    </div>
+
+    <!-- Submit button -->
+    <div class="d-flex justify-content-between">
+      <button
+        (click)="deleteRecord()"
+        class="btn btn-lg btn-danger flex-fill mx-1"
+      >
+        Eliminar
+      </button>
+      <a
+        [routerLink]="['/list-products']"
+        class="btn btn-lg btn-primary flex-fill mx-1"
+        >Cancelar</a
+      >
+    </div>
+  </form>
+</main>

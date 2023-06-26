@@ -1,0 +1,35 @@
+<main class="form-signin">
+    <form [formGroup]="fGroup">
+      <img class="mb-4" src="../assets/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+  
+      <div class="form-floating">
+        <input type="text" class="form-control validate" id="floatingNameSingUp" placeholder="Nombre" formControlName="nombre">
+        <label for="floatingNameSingUp" data-error="wrong" data-success="right">Nombre</label>
+        <div class="show-errors" *ngIf="getFgData['nombre'].errors 
+          && (getFgData['nombre'].dirty || getFgData['nombre'].touched)">
+          <strong>Este campo es obligatorio</strong>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInputSingUp" placeholder="name@example.com" formControlName="correoElectronico">
+        <label for="floatingInputSingUp">Email address</label>
+        <div class="show-errors" *ngIf="getFgData['correoElectronico'].errors 
+            && (getFgData['correoElectronico'].dirty || getFgData['correoElectronico'].touched)">
+            <strong>Este campo es obligatorio</strong>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPasswordSingUp" placeholder="Password" formControlName="contrasena">
+        <label for="floatingPasswordSingUp">Password</label>
+        <div class="show-errors" *ngIf="getFgData['contrasena'].errors 
+            && (getFgData['contrasena'].dirty || getFgData['contrasena'].touched)">
+            <strong>Este campo es obligatorio</strong>
+        </div>
+      </div>
+  
+      <div>
+        <button (click)="saveRecord()" class="w-100 btn btn-lg btn-primary my-2">Registrarse</button>
+      </div>
+    </form>
+</main>

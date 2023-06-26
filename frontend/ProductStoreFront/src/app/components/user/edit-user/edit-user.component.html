@@ -1,0 +1,31 @@
+<main class="form-signin">
+    <form [formGroup]="fGroup">
+      
+      <h1 class="h3 mb-3 fw-normal">Editar usuario</h1>
+        
+      <div class="form-floating">
+        <input type="hidden" formControlName="id" />
+        <input type="text" class="form-control validate" id="floatingNameSingUp" placeholder="Nombre" formControlName="nombre">
+        <label for="floatingNameSingUp" data-error="wrong" data-success="right">Nombre</label>
+        <div class="show-errors" *ngIf="getFgData['nombre'].errors 
+          && (getFgData['nombre'].dirty || getFgData['nombre'].touched)">
+          <strong>Este campo es obligatorio</strong>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInputSingUp" placeholder="name@example.com" formControlName="correoElectronico">
+        <label for="floatingInputSingUp">Email address</label>
+        <div class="show-errors" *ngIf="getFgData['correoElectronico'].errors 
+            && (getFgData['correoElectronico'].dirty || getFgData['correoElectronico'].touched)">
+            <strong>Este campo es obligatorio</strong>
+        </div>
+      </div>
+      
+      <input type="hidden" formControlName="contrasena" />
+  
+      <div>
+        <button (click)="editRecord()" class="w-100 btn btn-lg btn-primary my-2">Editar</button>
+        <a [routerLink]="['/list-users']" class="w-100 btn btn-lg btn-warning">Cancelar</a>
+      </div>
+    </form>
+</main>

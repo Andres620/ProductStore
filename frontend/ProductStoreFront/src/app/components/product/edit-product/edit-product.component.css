@@ -1,0 +1,8 @@
+@import 'src/assets/css/mdb.min.css';
+
+.form-edit {
+  width: 100%;
+  max-width: 70%;
+  padding: 40px;
+  margin: auto;
+}
