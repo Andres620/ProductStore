@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AuthGuard } from './guardians/auth.guard';
 import { AppComponent } from './app.component';
 
 import { LoadScriptsService } from './services/load-scripts.service';
@@ -44,7 +45,8 @@ import { CreateOrderComponent } from './components/order/create-order/create-ord
     FormsModule
   ],
   providers: [
-    LoadScriptsService
+    LoadScriptsService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

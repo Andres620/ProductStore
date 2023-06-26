@@ -14,22 +14,23 @@ import { ListOrderComponent } from './components/order/list-order/list-order.com
 import { CreateOrderComponent } from './components/order/create-order/create-order.component';
 import { EditOrderComponent } from './components/order/edit-order/edit-order.component';
 import { DeleteOrderComponent } from './components/order/delete-order/delete-order.component';
+import { AuthGuard } from './guardians/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AuthComponent},
   { path: 'auth', component: AuthComponent},
-  { path: 'list-users', component: ListUserComponent},
-  { path: 'create-user', component: CreateUserComponent},
-  { path: 'edit-user/:id', component: EditUserComponent},
-  { path: 'delete-user/:id', component: DeleteUserComponent},
-  { path: 'list-products', component: ListProductComponent},
-  { path: 'create-product', component: CreateProductComponent},
-  { path: 'edit-product/:id', component: EditProductComponent},
-  { path: 'delete-product/:id', component: DeleteProductComponent},
-  { path: 'list-orders', component: ListOrderComponent},
-  { path: 'create-order', component: CreateOrderComponent},
-  { path: 'edit-order/:id', component: EditOrderComponent},
-  { path: 'delete-order/:id', component: DeleteOrderComponent},
+  { path: 'list-users', component: ListUserComponent, canActivate: [AuthGuard]},
+  { path: 'create-user', component: CreateUserComponent, canActivate: [AuthGuard]},
+  { path: 'edit-user/:id', component: EditUserComponent, canActivate: [AuthGuard]},
+  { path: 'delete-user/:id', component: DeleteUserComponent, canActivate: [AuthGuard]},
+  { path: 'list-products', component: ListProductComponent, canActivate: [AuthGuard]},
+  { path: 'create-product', component: CreateProductComponent, canActivate: [AuthGuard]},
+  { path: 'edit-product/:id', component: EditProductComponent, canActivate: [AuthGuard]},
+  { path: 'delete-product/:id', component: DeleteProductComponent, canActivate: [AuthGuard]},
+  { path: 'list-orders', component: ListOrderComponent, canActivate: [AuthGuard]},
+  { path: 'create-order', component: CreateOrderComponent, canActivate: [AuthGuard]},
+  { path: 'edit-order/:id', component: EditOrderComponent, canActivate: [AuthGuard]},
+  { path: 'delete-order/:id', component: DeleteOrderComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
