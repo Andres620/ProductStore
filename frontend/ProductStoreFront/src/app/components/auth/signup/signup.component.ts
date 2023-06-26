@@ -24,9 +24,11 @@ export class SignupComponent implements OnInit {
 
   buildFormData() {
     this.fGroup = this.fb.group({
-      nombre: ['', [Validators.required]],
-      correoElectronico: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+')]],
-      contrasena: ['', [Validators.required]],
+      nombre: ['', [Validators.required, Validators.minLength(3)]],
+      correoElectronico: ['', [Validators.required, Validators.email]],
+      contrasena: ['', [Validators.required,
+          Validators.minLength(8), 
+          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[_\\-.@$!%*?&])[A-Za-z\\d_\\-.@$!%*?&]+$')]],
     });
   }
 

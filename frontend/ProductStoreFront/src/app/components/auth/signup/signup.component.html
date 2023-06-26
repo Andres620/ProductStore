@@ -8,7 +8,7 @@
         <label for="floatingNameSingUp" data-error="wrong" data-success="right">Nombre</label>
         <div class="show-errors" *ngIf="getFgData['nombre'].errors 
           && (getFgData['nombre'].dirty || getFgData['nombre'].touched)">
-          <strong>Este campo es obligatorio</strong>
+          <strong>El nombre debe tener minimo 3 caracteres</strong>
         </div>
       </div>
       <div class="form-floating">
@@ -16,7 +16,7 @@
         <label for="floatingInputSingUp">Email address</label>
         <div class="show-errors" *ngIf="getFgData['correoElectronico'].errors 
             && (getFgData['correoElectronico'].dirty || getFgData['correoElectronico'].touched)">
-            <strong>Este campo es obligatorio</strong>
+            <strong>El correo electrónico debe tener un formato válido</strong>
         </div>
       </div>
       <div class="form-floating">
@@ -24,7 +24,7 @@
         <label for="floatingPasswordSingUp">Password</label>
         <div class="show-errors" *ngIf="getFgData['contrasena'].errors 
             && (getFgData['contrasena'].dirty || getFgData['contrasena'].touched)">
-            <strong>Este campo es obligatorio</strong>
+            <strong>La contraseña debe ser minimo de 8 caracteres y contener almenos una letra mayuscula, un dígito y un caracter especial</strong>
         </div>
       </div>
   
