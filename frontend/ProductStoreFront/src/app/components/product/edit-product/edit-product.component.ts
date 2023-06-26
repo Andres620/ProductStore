@@ -62,7 +62,7 @@ export class EditProductComponent implements OnInit{
       this.productService.editProduct(model).subscribe({
         next: (data: ProductModel) => {
           alert('Producto actualizado correctamente');
-          this.router.navigate(['list-orders']);
+          this.router.navigate(['list-products']);
         },
         error: (err: any) => {
           alert("Ha ocurrido un error");
