@@ -44,6 +44,21 @@ namespace ProductStore.Controllers
             return Ok(pedidoModel);
         }
 
+        [HttpGet("usuario/{id}/pedidos")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoModel))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<PedidoModel> GetPedidosByUserId(int id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            PedidoAPIMapper mapper = new PedidoAPIMapper();
+            IEnumerable<PedidoModel> list = mapper.DTOToModelMapper(_app.getRecordsByUserId(id));
+            return Ok(list);
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

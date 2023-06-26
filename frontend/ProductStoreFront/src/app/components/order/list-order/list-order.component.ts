@@ -24,4 +24,31 @@ export class ListOrderComponent implements OnInit{
       }
     });
   }
+
+  searchOrderByUserId(id: HTMLInputElement) {
+    console.log(id);
+    if(isNaN(id.valueAsNumber)){
+      this.orderService.getOrders().subscribe({
+        next: (data: OrderModel[]) => {
+          this.orderList = data;
+          console.log(this.orderList);
+        },
+        error: (data: any) => {
+          alert("Error leyendo la información");
+          console.log(this.orderList);
+        }
+      });
+    }else{
+      this.orderService.getOrdersByUserId(id.valueAsNumber).subscribe({
+        next: (data: OrderModel[]) => {
+          this.orderList = data;
+          console.log(this.orderList);
+        },
+        error: (data: any) => {
+          alert("Error leyendo la información");
+          console.log(this.orderList);
+        }
+      });
+    }
+  }
 }

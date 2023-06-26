@@ -43,6 +43,13 @@ namespace ProductStore.Application.Implementation.Implementation
             return mapper.DbModelToDTOMapper(dbModel);
         }
 
+        public IEnumerable<PedidoDTO> getRecordsByUserId(int id)
+        {
+            PedidoApplicationMapper mapper = new PedidoApplicationMapper();
+            IEnumerable<PedidoDbModel> dbModelList = _repository.getRecordByUserId(id);
+            return mapper.DbModelToDTOMapper(dbModelList);
+        }
+
         public IEnumerable<PedidoDTO> getRecordsList()
         {
             PedidoApplicationMapper mapper = new PedidoApplicationMapper();

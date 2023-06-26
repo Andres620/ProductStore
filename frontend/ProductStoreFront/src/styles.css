@@ -6,8 +6,8 @@ html, body {
 }
 
 :root{
-  --body-color: #f5f5f5;
-  --sidebar-color: #FFF;
+  --body-color: #FFF;
+  --sidebar-color: #f5f5f5;
   --primary-color: #1707c4;
   --primary-color-light: #F6F5FF;
   --toggle-color: #DDD;

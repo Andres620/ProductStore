@@ -20,6 +20,15 @@ export class OrderService {
   }
 
   /**
+   * Listado de pedidos por id de usuario
+   * @param id 
+   * @returns
+   */
+    public getOrdersByUserId(id: number): Observable<OrderModel[]> {
+      return this.http.get<OrderModel[]>(`${this.urlApi}Pedido/usuario/${id}/pedidos`);
+    }
+
+  /**
    * Obtener pedido por id
    * @param id 
    * @returns 
