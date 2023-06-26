@@ -41,7 +41,7 @@
 
     <div class="bottom-content">
       <li class="">
-        <a href="#">
+        <a [routerLink]="['/auth']" (click)="logout()">
           <i class="bx bx-log-out icon"></i>
           <span class="text nav-text">Logout</span>
         </a>
@@ -61,7 +61,6 @@
     </div>
   </div>
 </nav>
-
 <section class="home">
   <router-outlet></router-outlet>
 </section>

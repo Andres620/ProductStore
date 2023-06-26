@@ -1,0 +1,50 @@
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 1', 'Descripción 1', '1000');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 2', 'Descripción 2', '1550');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 3', 'Descripción 3', '8990');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 4', 'Descripción 4', '1275');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 5', 'Descripción 5', '9990');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 6', 'Descripción 6', '5500');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 7', 'Descripción 7', '18250');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 8', 'Descripción 8', '7990');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 9', 'Descripción 9', '1450');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 10', 'Descripción 10', '1175');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 11', 'Descripción 11', '6990');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 12', 'Descripción 12', '9500');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 13', 'Descripción 13', '1325');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 14', 'Descripción 14', '8099');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 15', 'Descripción 15', '1650');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 16', 'Descripción 16', '4075');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 17', 'Descripción 17', '1099');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 18', 'Descripción 18', '7050');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 19', 'Descripción 19', '12025');
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto 20', 'Descripción 20', '999');
+
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 1', 'usuario1@example.com', 'Password_1');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 2', 'usuario2@example.com', 'Password_2');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 3', 'usuario3@example.com', 'Password_3');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 4', 'usuario4@example.com', 'Password_4');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 5', 'usuario5@example.com', 'Password_5');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 6', 'usuario6@example.com', 'Password_6');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 7', 'usuario7@example.com', 'Password_7');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 8', 'usuario8@example.com', 'Password_8');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 9', 'usuario9@example.com', 'Password_9');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 10', 'usuario10@example.com', 'Password_10');
+INSERT INTO usuarios (nombre, correo_electronico, contrasena) VALUES ('Usuario 11', 'usuario11@example.com', 'Password_11');
+
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (12, 13, '2023-06-25', 5);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (21, 32, '2023-06-26', 3);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (18, 22, '2023-06-27', 2);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (13, 25, '2023-06-28', 4);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (12, 24, '2023-06-29', 1);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (16, 13, '2023-06-30', 3);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (14, 25, '2023-07-01', 2);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (15, 19, '2023-07-02', 4);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (13, 25, '2023-07-03', 3);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (21, 15, '2023-07-04', 2);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (16, 29, '2023-07-05', 1);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (14, 22, '2023-07-06', 3);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (15, 11, '2023-07-07', 2);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (13, 30, '2023-07-08', 4);
+INSERT INTO pedidos (usuario_id, producto_id, fecha, cantidad) VALUES (17, 14, '2023-07-09', 3);
+
+delete from pedidos

@@ -21,8 +21,8 @@ export class UserService {
 
   /**
    * Obtener usuario por id
-   * @param id 
-   * @returns 
+   * @param id
+   * @returns
    */
   public getUsersById(id: number): Observable<UserModel> {
     return this.http.get<UserModel>(`${this.urlApi}Usuario/${id}`);
@@ -46,13 +46,22 @@ export class UserService {
     return this.http.put<UserModel>(`${this.urlApi}Usuario/${user.id}`, user);
   }
 
-
   /**
    * Eliminar un usuario
-   * @param id 
-   * @returns 
+   * @param id
+   * @returns
    */
   public deleteUser(id: number): Observable<any> {
     return this.http.delete<any>(`${this.urlApi}Usuario/${id}`);
+  }
+
+  /**
+   * Autenticar usuario
+   * @param email 
+   * @param password 
+   * @returns 
+   */
+  public autenticateUser(email: string, password: string): Observable<UserModel> {
+    return this.http.get(`${this.urlApi}auth/${email}/${password}`);
   }
 }
