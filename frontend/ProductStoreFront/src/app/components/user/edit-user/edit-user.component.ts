@@ -12,7 +12,7 @@ import 'src/assets/js/mdb.min.js';
 })
 export class EditUserComponent implements OnInit{
   fGroup: FormGroup = new FormGroup({});
-  recordId: number = 4;
+  recordId: number = 0;
 
   constructor(
     private fb: FormBuilder,

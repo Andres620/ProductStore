@@ -254,6 +254,8 @@ body.dark .switch::before{
     position: absolute;
     top: 0;
     padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);

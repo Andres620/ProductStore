@@ -1,7 +1,7 @@
 export class OrderModel {
   id?: number;
-  usuarioId?: string;
-  productoId?: string;
+  usuarioId?: number;
+  productoId?: number;
   fecha?: Date;
   cantidad?: number;
 }

@@ -1,1 +1,39 @@
-<p>create-product works!</p>
+<main class="form-edit">
+    <h1>Crear Producto</h1>
+    <form [formGroup]="fGroup">
+        <input type="hidden" formControlName="id" />
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="formEditProductName" class="form-control validate active" formControlName="nombre"/>
+            <label class="form-label active" for="formEditProductName" data-error="wrong" data-success="right">Nombre</label>
+            <div class="show-errors" *ngIf="getFgData['nombre'].errors 
+            && (getFgData['nombre'].dirty || getFgData['nombre'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+      
+        <!-- Description input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="formEditProductDescription" class="form-control validate active" formControlName="descripcion"/>
+            <label class="form-label active" for="formEditProductDescription" data-error="wrong" data-success="right">Descripción</label>
+            <div class="show-errors" *ngIf="getFgData['descripcion'].errors && (getFgData['descripcion'].dirty || getFgData['descripcion'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+
+        <!-- Price input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="formEditProductPrice" class="form-control validate active" formControlName="precio"/>
+            <label class="form-label active" for="formEditProductPrice" data-error="wrong" data-success="right">Precio</label>
+            <div class="show-errors" *ngIf="getFgData['precio'].errors && (getFgData['precio'].dirty || getFgData['precio'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+      
+        <!-- Submit button -->
+        <div class="d-flex justify-content-between">
+            <button (click)="saveRecord()" class="btn btn-lg btn-success flex-fill mx-1" >Crear</button>
+            <a [routerLink]="['/list-products']" class="btn btn-lg btn-primary flex-fill mx-1">Cancelar</a>
+          </div>
+      </form>
+</main>

@@ -20,7 +20,7 @@
           <th scope="row">{{ item.id }}</th>
           <td>{{ item.usuarioId }}</td>
           <td>{{ item.productoId }}</td>
-          <td>{{ item.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ item.fecha | date:'dd/MM/yyyy' }}</td>
           <td>{{ item.cantidad  }}</td>
           <td>
             <a routerLink="/edit-order/{{item.id}}" class="btn btn-warning btn-sm me-2">Editar</a>

@@ -16,6 +16,7 @@ import { EditOrderComponent } from './components/order/edit-order/edit-order.com
 import { DeleteOrderComponent } from './components/order/delete-order/delete-order.component';
 
 const routes: Routes = [
+  { path: '', component: AuthComponent},
   { path: 'auth', component: AuthComponent},
   { path: 'list-users', component: ListUserComponent},
   { path: 'create-user', component: CreateUserComponent},

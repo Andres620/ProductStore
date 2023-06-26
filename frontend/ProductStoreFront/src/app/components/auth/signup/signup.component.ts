@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
   buildFormData() {
     this.fGroup = this.fb.group({
       nombre: ['', [Validators.required]],
-      correoElectronico: ['', [Validators.required]],
+      correoElectronico: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+')]],
       contrasena: ['', [Validators.required]],
     });
   }
@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
       this.userService.saveUser(model).subscribe({
         next: (data: UserModel) => {
           alert('Usuario registrado correctamente');
-          this.router.navigate(['']);
+          this.router.navigate(['/list-products']);
         },
         error: (err: any) => {
           alert("Error: Esta dirección de correo electrónico ya está registrada");

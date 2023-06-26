@@ -1,11 +1,5 @@
 <main class="form-signin">
-  <img
-    class="mb-4"
-    src="../assets/bootstrap-logo.svg"
-    alt=""
-    width="72"
-    height="57"
-  />
+
   <h1 class="h3 mb-3 fw-normal">Eliminar usuario</h1>
 
   <div class="form-floating">
@@ -38,9 +32,8 @@
     <button (click)="deleteRecord()" class="w-100 btn btn-lg btn-danger my-2">
       Eliminar
     </button>
-    <a [routerLink]="['/auth']" class="w-100 btn btn-lg btn-warning"
+    <a [routerLink]="['/list-users']" class="w-100 btn btn-lg btn-warning"
       >Cancelar</a
     >
   </div>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
 </main>

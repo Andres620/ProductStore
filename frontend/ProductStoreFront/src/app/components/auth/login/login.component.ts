@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ILogin } from 'src/app/models/login.interface';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit{
 
   }
 
-  onLogin(form: ILogin){
+  onLogin(){
 
   }
 

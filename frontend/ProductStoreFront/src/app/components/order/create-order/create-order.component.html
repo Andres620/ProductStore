@@ -1,1 +1,51 @@
-<p>create-order works!</p>
+<main class="form-edit">
+    <h1>Editar Pedidos</h1>
+    <form [formGroup]="fGroup">
+        <input type="hidden" formControlName="id" />
+        
+        <!-- User input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="formEditOrderUser" class="form-control validate active " formControlName="usuarioId"/>
+            <label class="form-label active" for="formEditOrderUser" data-error="wrong" data-success="right">Usuario</label>
+            <div class="show-errors" *ngIf="getFgData['usuarioId'].errors 
+            && (getFgData['usuarioId'].dirty || getFgData['usuarioId'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+      
+        <!-- Product input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="formEditOrderProduct" class="form-control validate active" formControlName="productoId"/>
+            <label class="form-label active" for="formEditOrderProduct" data-error="wrong" data-success="right">Producto</label>
+            <div class="show-errors" *ngIf="getFgData['productoId'].errors 
+            && (getFgData['productoId'].dirty || getFgData['productoId'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+
+        <!-- Date input -->
+        <div class="form-outline mb-4" style="width: 180px;">
+            <input type="date" id="formEditOrderDate" class="form-control validate active" formControlName="fecha"/>
+            <label class="form-label active" for="formEditOrderDate" data-error="wrong" data-success="right">Fecha</label>
+            <div class="show-errors" *ngIf="getFgData['fecha'].errors 
+            && (getFgData['fecha'].dirty || getFgData['fecha'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+
+        <!-- Q!uantity input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="formEditProductQuantity" class="form-control validate active" formControlName="cantidad"/>
+            <label class="form-label active" for="formEditProductQuantity" data-error="wrong" data-success="right">Cantidad</label>
+            <div class="show-errors" *ngIf="getFgData['cantidad'].errors && (getFgData['cantidad'].dirty || getFgData['cantidad'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+      
+        <!-- Submit button -->
+        <div class="d-flex justify-content-between">
+            <button (click)="saveRecord()" class="btn btn-lg btn-success flex-fill mx-1">Editar</button>
+            <a [routerLink]="['/list-products']" class="btn btn-lg btn-primary flex-fill mx-1">Cancelar</a>
+          </div>
+      </form>
+</main>
