@@ -82,6 +82,22 @@ namespace ProductStore.Repository.Implementation.Implementation.Core
         }
 
         /// <summary>
+        /// Obtiene los registrso por Id de usuario
+        /// </summary>
+        /// <param name="id">Id del registro a buscar</param>
+        /// <returns>>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
+        public IEnumerable<PedidoDbModel> getRecordByUserId(int id)
+        {
+            using (ProductStoreContext db = new ProductStoreContext())
+            {
+                IEnumerable<Pedido> list = db.Pedidos.Where(p => p.UsuarioId == id).ToList();
+                PedidoRepositoryMapper mapper = new PedidoRepositoryMapper();
+                return mapper.DatabaseToDbModelMapper(list);
+            }
+        }
+
+
+        /// <summary>
         /// Obtener la lista de pedidos
         /// </summary>
         /// <returns>Lista de registros</returns>

@@ -10,6 +10,7 @@ namespace ProductStore.Application.Contracts.Interfaces
     public interface IPedidoApplication
     {
         PedidoDTO getRecordById(int id);
+        IEnumerable<PedidoDTO> getRecordsByUserId(int id);
         IEnumerable<PedidoDTO> getRecordsList();
         PedidoDTO createRecord(PedidoDTO record);
         PedidoDTO updateRecord(PedidoDTO record);

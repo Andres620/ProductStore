@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'list-orders', component: ListOrderComponent},
   { path: 'create-order', component: CreateOrderComponent},
   { path: 'edit-order/:id', component: EditOrderComponent},
-  { path: 'delete-order/:id', component: DeleteOrderComponent}
+  { path: 'delete-order/:id', component: DeleteOrderComponent},
 ];
 
 @NgModule({

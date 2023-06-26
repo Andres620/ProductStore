@@ -10,6 +10,7 @@ namespace ProductStore.Repository.Contracts.Interfaces
     public interface IPedidoRepository
     {
         PedidoDbModel getRecordById(int id);
+        IEnumerable<PedidoDbModel> getRecordByUserId(int id);
         IEnumerable<PedidoDbModel> getRecordsList();
         PedidoDbModel createRecord(PedidoDbModel record);
         PedidoDbModel updateRecord(PedidoDbModel record);
